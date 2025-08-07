@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "usernamehw.errorlens",
+        "dbaeumer.vscode-eslint",
+        "bierner.markdown-preview-github-styles",
+        "esbenp.prettier-vscode",
+        "yoavbls.pretty-ts-errors",
+        "bradlc.vscode-tailwindcss",
+        "gruntfuggly.todo-tree",
+        "vitest.explorer",
+        "vue.volar",
+        "sdras.vue-vscode-snippets"
+    ]
+}
