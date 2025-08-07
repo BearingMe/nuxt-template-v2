@@ -4,17 +4,17 @@
 /* Primary and Surface are provided by Prime UI */
 :root {
   /* token */
-  --p-primary-50: #ecfdf5;
-  --p-primary-100: #d1fae5;
-  --p-primary-200: #a7f3d0;
-  --p-primary-300: #6ee7b7;
-  --p-primary-400: #34d399;
-  --p-primary-500: #10b981;
-  --p-primary-600: #059669;
-  --p-primary-700: #047857;
-  --p-primary-800: #065f46;
-  --p-primary-900: #064e3b;
-  --p-primary-950: #022c22;
+  --p-primary-50: #fff0f0;
+  --p-primary-100: #ffdddd;
+  --p-primary-200: #ffc1c1;
+  --p-primary-300: #ff9596;
+  --p-primary-400: #ff595a;
+  --p-primary-500: #ff2627;
+  --p-primary-600: #fc0607;
+  --p-primary-700: #cc0001;
+  --p-primary-800: #af0506;
+  --p-primary-900: #900c0d;
+  --p-primary-950: #500000;
 
   --p-surface-0: #ffffff;
   --p-surface-50: #fafafa;
@@ -61,7 +61,13 @@
   --color-secondary-800: #174075;
   --color-secondary-900: #183762;
   --color-secondary-950: #102241;
+
   --color-secondary: var(--color-secondary-700);
+  --color-secondary-contrast: var(--p-surface-0);
+  --color-secondary-hover: var(--color-secondary-600);
+  --color-secondary-active: var(--color-secondary-700);
+  --color-secondary-emphasis: var(--color-secondary-800);
+  --color-secondary-emphasis-alt: var(--color-secondary-900);
 
   --color-tertiary-50: #f9f6fe;
   --color-tertiary-100: #f2ebfc;
@@ -74,5 +80,11 @@
   --color-tertiary-800: #623495;
   --color-tertiary-900: #502b78;
   --color-tertiary-950: #341457;
-  --color-tertiary: var(--color-secondary-700);
+
+  --color-tertiary: var(--color-tertiary-700);
+  --color-tertiary-contrast: var(--p-surface-0);
+  --color-tertiary-hover: var(--color-tertiary-600);
+  --color-tertiary-active: var(--color-tertiary-700);
+  --color-tertiary-emphasis: var(--color-tertiary-800);
+  --color-tertiary-emphasis-alt: var(--color-tertiary-900);
 }
