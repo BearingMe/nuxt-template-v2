@@ -9,6 +9,11 @@ dist
 # Node dependencies
 node_modules
 
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
 # Logs
 logs
 *.log
@@ -22,3 +27,6 @@ logs
 .env
 .env.*
 !.env.example
+
+# Prevent uploading wrong folders/files
+/src
