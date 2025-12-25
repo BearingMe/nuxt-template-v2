@@ -41,6 +41,7 @@ function handleSave() {
 Organize por "nível de autoridade" das APIs. Comece pelo que define o contrato do componente.
 
 ```vue
+<script>
 // 1. Definição do Contrato (Macros)
 const props = defineProps<Props>()
 const model = defineModel()
@@ -51,6 +52,7 @@ const doubled = computed(() => count.value * 2)
 
 // 3. Ciclo de vida e Efeitos (Side Effects)
 onMounted(() => console.log('Pronto'))
+</script>
 ```
 
 ### 2. Reatividade: Ref por padrão
@@ -58,6 +60,7 @@ onMounted(() => console.log('Pronto'))
 Use `ref` para manter a consistência. `reactive` é exceção para objetos densos de formulário.
 
 ```vue
+<script>
 // ✅ CORRETO: Consistente e fácil de identificar no script (.value)
 const name = ref('Aizen')
 const age = ref(30)
@@ -67,6 +70,7 @@ const form = reactive({
   email: '',
   password: ''
 })
+</script>
 ```
 
 ### 3. Nomenclatura de Componentes
@@ -89,6 +93,8 @@ Mantenha o template limpo.
 - HTML sempre com fechamento explícito
 
 ```vue
-<UserCard :id="123" />
-<div></div>
+<template>
+  <UserCard :id="123" />
+  <div></div>
+</template>
 ```
