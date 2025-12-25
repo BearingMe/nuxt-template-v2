@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tailwindcss-primeui";
 
+/* disable dark theme  */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 /* Tailwind Theme  */
 @theme {
   /* Design Tokens */
