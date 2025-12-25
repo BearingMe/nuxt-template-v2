@@ -1,0 +1,55 @@
+<template>
+  <ConfirmDialog
+    unstyled
+    :pt="theme"
+    :pt-options="{
+      mergeProps: ptViewMerge,
+    }"
+  >
+    <template #container="{ message, acceptCallback, rejectCallback }">
+      <div class="flex shrink-0 items-center justify-between p-5">
+        <span class="text-xl font-semibold">{{ message.header }}</span>
+        <SecondaryButton variant="text" rounded autofocus @click="rejectCallback">
+          <template #icon>
+            <TimesIcon />
+          </template>
+        </SecondaryButton>
+      </div>
+      <div class="flex items-center gap-4 overflow-y-auto px-5 pt-0 pb-5">
+        <ExclamationTriangeIcon class="size-6" />
+        {{ message.message }}
+      </div>
+      <div class="flex justify-end gap-2 px-5 pt-0 pb-5">
+        <SecondaryButton :label="message.rejectProps.label" size="small" @click="rejectCallback" />
+        <Button :label="message.acceptProps.label" size="small" @click="acceptCallback" />
+      </div>
+    </template>
+  </ConfirmDialog>
+</template>
+
+<script setup lang="ts">
+import ExclamationTriangeIcon from "@primevue/icons/exclamationtriangle";
+import TimesIcon from "@primevue/icons/times";
+import ConfirmDialog, { type ConfirmDialogPassThroughOptions, type ConfirmDialogProps } from "primevue/confirmdialog";
+import { ref } from "vue";
+import Button from "./Button.vue";
+import SecondaryButton from "./SecondaryButton.vue";
+import { ptViewMerge } from "./utils";
+
+interface Props extends /* @vue-ignore */ ConfirmDialogProps {}
+defineProps<Props>();
+
+const theme = ref<ConfirmDialogPassThroughOptions>({
+  root: `max-h-[90%] max-w-screen rounded-xl
+        border border-surface-200 dark:border-surface-700
+        bg-surface-0 dark:bg-surface-900
+        text-surface-700 dark:text-surface-0 shadow-lg`,
+  mask: `bg-black/50 fixed top-0 start-0 w-full h-full`,
+  transition: {
+    enterFromClass: "opacity-0 scale-75",
+    enterActiveClass: "transition-all duration-150 ease-[cubic-bezier(0,0,0.2,1)]",
+    leaveActiveClass: "transition-all duration-150 ease-[cubic-bezier(0.4,0,0.2,1)]",
+    leaveToClass: "opacity-0 scale-75",
+  },
+});
+</script>
