@@ -41,12 +41,12 @@
           <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <VoltButton
               label="Começar Agora"
-              icon="lucide:zap"
+              nuxt-icon="lucide:zap"
               class="w-full font-semibold shadow-lg shadow-emerald-500/20 sm:w-auto"
             />
             <VoltSecondaryButton
               label="Ler Documentação"
-              icon="lucide:book-open"
+              nuxt-icon="lucide:book-open"
               severity="secondary"
               outlined
               class="w-full bg-transparent hover:bg-gray-100 sm:w-auto dark:hover:bg-gray-800"

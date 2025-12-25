@@ -6,6 +6,10 @@
       mergeProps: ptViewMerge,
     }"
   >
+    <template v-if="nuxtIcon" #icon>
+      <Icon :name="nuxtIcon" />
+    </template>
+
     <template v-for="(_, slotName) in $slots" #[slotName]="slotProps">
       <slot :name="slotName" v-bind="slotProps ?? {}" />
     </template>
@@ -17,7 +21,10 @@ import Button, { type ButtonPassThroughOptions, type ButtonProps } from "primevu
 import { ref } from "vue";
 import { ptViewMerge } from "./utils";
 
-interface Props extends /* @vue-ignore */ ButtonProps {}
+interface Props extends /* @vue-ignore */ ButtonProps {
+  nuxtIcon?: string;
+}
+
 defineProps<Props>();
 
 const theme = ref<ButtonPassThroughOptions>({
