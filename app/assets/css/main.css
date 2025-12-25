@@ -1,35 +1,94 @@
 @import "tailwindcss";
 @import "tailwindcss-primeui";
 
-/* Primary and Surface are provided by Prime UI */
+/* Tailwind Theme  */
+@theme {
+  /* Design Tokens */
+  --color-primary-50: #fff0f0;
+  --color-primary-100: #ffdddd;
+  --color-primary-200: #ffc1c1;
+  --color-primary-300: #ff9596;
+  --color-primary-400: #ff595a;
+  --color-primary-500: #ff2627;
+  --color-primary-600: #fc0607;
+  --color-primary-700: #cc0001;
+  --color-primary-800: #af0506;
+  --color-primary-900: #900c0d;
+  --color-primary-950: #500000;
+
+  --color-secondary-50: hsl(214, 79%, 97%);
+  --color-secondary-100: hsl(216, 80%, 95%);
+  --color-secondary-200: hsl(216, 71%, 86%);
+  --color-secondary-300: hsl(213, 72%, 74%);
+  --color-secondary-400: hsl(213, 70%, 59%);
+  --color-secondary-500: hsl(213, 66%, 45%);
+  --color-secondary-600: hsl(213, 72%, 39%);
+  --color-secondary-700: hsl(213, 69%, 32%);
+  --color-secondary-800: hsl(213, 65%, 27%);
+  --color-secondary-900: hsl(214, 58%, 24%);
+  --color-secondary-950: hsl(215, 63%, 16%);
+
+  /* Semantic Tokens */
+  --color-primary: var(--color-primary-500);
+  --color-primary-foreground: hsl(210 40% 98%);
+
+  --color-secondary: var(--color-secondary-500);
+  --color-secondary-foreground: hsl(210 40% 98%);
+
+  --color-foreground: hsl(222.2 84% 4.9%);
+  --color-background: hsl(0 0% 100%);
+
+  --color-muted: hsl(210 40% 96.1%);
+  --color-muted-foreground: hsl(215.4 16.3% 46.9%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(222.2 84% 4.9%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(222.2 84% 4.9%);
+
+  --color-border: hsl(0 0% 90%);
+  --color-input: hsl(214.3 31.8% 91.4%);
+
+  --color-accent: hsl(210 40% 96.1%);
+  --color-accent-foreground: hsl(222.2 47.4% 11.2%);
+
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+
+  --color-warning: hsl(43.01, 91.63%, 53.14%);
+  --color-ring: hsl(222.2 84% 4.9%);
+}
+
+/* Prime UI Theme*/
 :root {
-  /* token */
-  --p-primary-50: #fff0f0;
-  --p-primary-100: #ffdddd;
-  --p-primary-200: #ffc1c1;
-  --p-primary-300: #ff9596;
-  --p-primary-400: #ff595a;
-  --p-primary-500: #ff2627;
-  --p-primary-600: #fc0607;
-  --p-primary-700: #cc0001;
-  --p-primary-800: #af0506;
-  --p-primary-900: #900c0d;
-  --p-primary-950: #500000;
+  /* Design Tokens */
+  --p-primary-50: var(--color-primary-50);
+  --p-primary-100: var(--color-primary-100);
+  --p-primary-200: var(--color-primary-200);
+  --p-primary-300: var(--color-primary-300);
+  --p-primary-400: var(--color-primary-400);
+  --p-primary-500: var(--color-primary-500);
+  --p-primary-600: var(--color-primary-600);
+  --p-primary-700: var(--color-primary-700);
+  --p-primary-800: var(--color-primary-800);
+  --p-primary-900: var(--color-primary-900);
+  --p-primary-950: var(--color-primary-950);
 
-  --p-surface-0: #ffffff;
-  --p-surface-50: #fafafa;
-  --p-surface-100: #f4f4f5;
-  --p-surface-200: #e4e4e7;
-  --p-surface-300: #d4d4d8;
-  --p-surface-400: #a1a1aa;
-  --p-surface-500: #71717a;
-  --p-surface-600: #52525b;
-  --p-surface-700: #3f3f46;
-  --p-surface-800: #27272a;
-  --p-surface-900: #18181b;
-  --p-surface-950: #09090b;
+  --p-surface-0: var(--color-white);
+  --p-surface-50: var(--color-gray-50);
+  --p-surface-100: var(--color-gray-100);
+  --p-surface-200: var(--color-gray-200);
+  --p-surface-300: var(--color-gray-300);
+  --p-surface-400: var(--color-gray-400);
+  --p-surface-500: var(--color-gray-500);
+  --p-surface-600: var(--color-gray-600);
+  --p-surface-700: var(--color-gray-700);
+  --p-surface-800: var(--color-gray-800);
+  --p-surface-900: var(--color-gray-900);
+  --p-surface-950: var(--color-gray-950);
 
-  /* semantic  */
+  /* Semantic Tokens */
   --p-primary-color: var(--p-primary-500);
   --p-primary-contrast-color: var(--p-surface-0);
   --p-primary-hover-color: var(--p-primary-600);
@@ -46,45 +105,4 @@
   --p-text-muted-color: var(--p-surface-500);
   --p-text-hover-muted-color: var(--p-surface-600);
   --p-content-border-radius: 6px;
-}
-
-/* Extra colors are provided by Tailwind */
-@theme {
-  --color-secondary-50: #f2f7fd;
-  --color-secondary-100: #e4ecfa;
-  --color-secondary-200: #c3d8f4;
-  --color-secondary-300: #8db8ec;
-  --color-secondary-400: #5095e0;
-  --color-secondary-500: #276fbf;
-  --color-secondary-600: #1b5cae;
-  --color-secondary-700: #174a8d;
-  --color-secondary-800: #174075;
-  --color-secondary-900: #183762;
-  --color-secondary-950: #102241;
-
-  --color-secondary: var(--color-secondary-700);
-  --color-secondary-contrast: var(--p-surface-0);
-  --color-secondary-hover: var(--color-secondary-600);
-  --color-secondary-active: var(--color-secondary-700);
-  --color-secondary-emphasis: var(--color-secondary-800);
-  --color-secondary-emphasis-alt: var(--color-secondary-900);
-
-  --color-tertiary-50: #f9f6fe;
-  --color-tertiary-100: #f2ebfc;
-  --color-tertiary-200: #e7dbf9;
-  --color-tertiary-300: #d4bef4;
-  --color-tertiary-400: #ba95eb;
-  --color-tertiary-500: #9e6ce0;
-  --color-tertiary-600: #884dd0;
-  --color-tertiary-700: #793dbf;
-  --color-tertiary-800: #623495;
-  --color-tertiary-900: #502b78;
-  --color-tertiary-950: #341457;
-
-  --color-tertiary: var(--color-tertiary-700);
-  --color-tertiary-contrast: var(--p-surface-0);
-  --color-tertiary-hover: var(--color-tertiary-600);
-  --color-tertiary-active: var(--color-tertiary-700);
-  --color-tertiary-emphasis: var(--color-tertiary-800);
-  --color-tertiary-emphasis-alt: var(--color-tertiary-900);
 }
